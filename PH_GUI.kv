@@ -1,0 +1,88 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+
+Manage:
+    transition:FadeTransition()
+    MainScreen:
+    CPRScreen:
+<CPRScreen>:
+    name:"CPR"
+    BoxLayout:
+        orientation:"horizontal"
+        spacing:10
+        padding:10
+        Button:
+            text:"Go Back"
+            on_press:root.Switch()
+<MainScreen>:
+    name:"Main"
+    BoxLayout:
+        orientation:"vertical"
+        spacing:10
+        padding:10
+        BoxLayout:
+            orientation:"horizontal"
+            spacing:20
+            padding:20
+            Image:
+                source:"fig.jpg"
+                size_hint_x:1.2
+                size_hint_y:1.2
+            BoxLayout:
+                orientation:"horizontal"
+                Button:
+                    text:"EMERGENCY"
+                    color:[1,0,0,1]
+                    font_size:45
+                    size_hint_y:0.3
+                    on_release:root.Switch()
+
+        BoxLayout:
+            orientation:"horizontal"
+            BoxLayout:
+                orientation:"vertical"
+                id:Data
+                size_hint_y:0.5
+                spacing:1
+                padding:10
+                BoxLayout:
+
+                    orientation:"horizontal"
+                    size_hint_y:None
+                    height:40
+                    Label:
+                        text:"Temperature"
+                        font_size:30
+
+                    TextInput:
+                        id:Temperature
+                        text:"98 F"
+                        font_size:20
+                        readonly:True
+
+                BoxLayout:
+                    orientation:"horizontal"
+                    size_hint_y:None
+                    height:40
+                    Label:
+                        text:"Heart Rate "
+                        font_size:30
+
+                    TextInput:
+                        id:BPM
+                        text:"80 BPM"
+                        font_size:20
+                        readonly:True
+                BoxLayout:
+                    orientation:"horizontal"
+                    size_hint_y:None
+                    height:40
+                    Label:
+                        text:"Condition"
+                        font_size:30
+
+                    TextInput:
+                        id:Condition
+                        text:"Normal"
+                        font_size:20
+                        readonly:True
